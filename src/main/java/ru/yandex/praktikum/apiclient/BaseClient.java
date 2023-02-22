@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.API;
+package ru.yandex.praktikum.apiclient;
 
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;

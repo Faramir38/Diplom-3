@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.API;
+package ru.yandex.praktikum.apiclient;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 //POJO для изменения пользователя
-@Setter @Getter
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserBean {

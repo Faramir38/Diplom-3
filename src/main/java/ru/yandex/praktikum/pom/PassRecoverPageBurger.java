@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.POM;
+package ru.yandex.praktikum.pom;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -6,14 +6,13 @@ import org.openqa.selenium.WebDriver;
 
 public class PassRecoverPageBurger extends BasePageBurger {
 
+    //Надпись Восстановление пароля
+    private By restorePasswordLabel = By.xpath("//h2[text()='Восстановление пароля']");
+    //Кнопка Войти
+    private By loginButton = By.xpath("//a[@href='/login']");
     public PassRecoverPageBurger(WebDriver driver) {
         super(driver);
     }
-
-    //Надпись Восстановление пароля
-    By restorePasswordLabel = By.xpath("//h2[text()='Восстановление пароля']");
-    //Кнопка Войти
-    By loginButton = By.xpath("//a[@href='/login']");
 
     @Step("Клик на Войти")
     public void clickLogin() {
@@ -24,6 +23,4 @@ public class PassRecoverPageBurger extends BasePageBurger {
     public void waitForLoad() {
         waitForVisibility(restorePasswordLabel);
     }
-
-
 }

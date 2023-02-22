@@ -29,6 +29,4 @@ public class DataGenerator {
         Faker faker = new Faker();
         return faker.internet().emailAddress();
     }
-
-
 }

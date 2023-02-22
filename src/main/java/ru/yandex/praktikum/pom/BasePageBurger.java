@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.POM;
+package ru.yandex.praktikum.pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,14 +11,14 @@ import java.util.concurrent.TimeUnit;
 public class BasePageBurger {
     protected WebDriver driver;
 
-    public BasePageBurger(WebDriver driver){
-        this.driver = driver;}
+    public BasePageBurger(WebDriver driver) {
+        this.driver = driver;
+    }
 
-    public void waitForVisibility (By element) {
+    public void waitForVisibility(By element) {
         new WebDriverWait(driver, Duration.ofSeconds(3));
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOf(driver.findElement(element)));
     }
-
 }

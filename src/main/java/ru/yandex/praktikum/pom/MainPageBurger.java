@@ -1,14 +1,10 @@
-package ru.yandex.praktikum.POM;
+package ru.yandex.praktikum.pom;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import io.qameta.allure.Step;
 
 public class MainPageBurger extends BasePageBurger {
-
-    public MainPageBurger(WebDriver driver) {
-        super(driver);
-    }
 
     //Кнопка "Войти в аккаунт"
     private By loginButton = By.xpath("//button[text()='Войти в аккаунт']");
@@ -36,6 +32,9 @@ public class MainPageBurger extends BasePageBurger {
     private By makeBurgerLabel = By.xpath("//h1[@class='text text_type_main-large mb-5 mt-10']");
     //Кнопка Оформить заказ
     private By orderButton = By.xpath("//button[text()='Оформить заказ']");
+    public MainPageBurger(WebDriver driver) {
+        super(driver);
+    }
 
     @Step("Клик по кнопке Войти в аккаунт на главной странице")
     public void clickLogin() {
@@ -66,6 +65,7 @@ public class MainPageBurger extends BasePageBurger {
     public boolean isSauceActive() {
         return driver.findElement(activeSauceButton).isDisplayed();
     }
+
     @Step("Клик на Начинки")
     public void clickFilling() {
         driver.findElement(inactiveFillingButton).click();
@@ -75,6 +75,7 @@ public class MainPageBurger extends BasePageBurger {
     public boolean isFillingActive() {
         return driver.findElement(activeFillingButton).isDisplayed();
     }
+
     @Step("Клик на Начинки")
     public void clickBun() {
         driver.findElement(inactiveBunButton).click();
@@ -84,7 +85,4 @@ public class MainPageBurger extends BasePageBurger {
     public boolean isBunActive() {
         return driver.findElement(activeBunButton).isDisplayed();
     }
-
-
-
 }

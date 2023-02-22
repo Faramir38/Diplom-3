@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.POM;
+package ru.yandex.praktikum.pom;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -6,25 +6,24 @@ import org.openqa.selenium.WebDriver;
 
 public class RegistrationPageBurger extends BasePageBurger {
 
+    //Надпись Регистрация
+    private By registerLabel = By.xpath("//h2[text()='Регистрация']");
+    //Поле Имя
+    private By nameField = By.xpath("//label[text()='Имя']/../input");
+    //Поле Email
+    private By emailField = By.xpath("//label[text()='Email']/../input");
+    //Поле Пароль
+    private By passwordField = By.xpath("//label[text()='Пароль']/../input");
+    //Кнопка Зарегистрироваться
+    private By registerButton = By.xpath("//button[@class='button_button__33qZ0 " +
+            "button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']");
+    //Кнопка Войти
+    private By loginButton = By.xpath("//a[@href='/login']");
+    //Надпись Некорректный пароль
+    private By incorrectPasswordLabel = By.xpath("//p[@class='input__error text_type_main-default']");
     public RegistrationPageBurger(WebDriver driver) {
         super(driver);
     }
-
-    //Надпись Регистрация
-    By registerLabel = By.xpath("//h2[text()='Регистрация']");
-    //Поле Имя
-    By nameField = By.xpath("//label[text()='Имя']/../input");
-    //Поле Email
-    By emailField = By.xpath("//label[text()='Email']/../input");
-    //Поле Пароль
-    By passwordField = By.xpath("//label[text()='Пароль']/../input");
-    //Кнопка Зарегистрироваться
-    By registerButton = By.xpath("//button[@class='button_button__33qZ0 " +
-            "button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']");
-    //Кнопка Войти
-    By loginButton = By.xpath("//a[@href='/login']");
-    //Надпись Некорректный пароль
-    By incorrectPasswordLabel = By.xpath("//p[@class='input__error text_type_main-default']");
 
     @Step("Ожидание загрузки страницы Регистрации")
     public void waitForLoad() {
@@ -52,6 +51,4 @@ public class RegistrationPageBurger extends BasePageBurger {
     public void clickLogin() {
         driver.findElement(loginButton).click();
     }
-
-
 }

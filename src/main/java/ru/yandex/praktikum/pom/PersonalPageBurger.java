@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.POM;
+package ru.yandex.praktikum.pom;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -6,18 +6,17 @@ import org.openqa.selenium.WebDriver;
 
 public class PersonalPageBurger extends BasePageBurger {
 
+    //Кнопка Конструктор
+    private By constructorButton = By.xpath("//p[text()='Конструктор']");
+    //Логотип
+    private By logoButton = By.xpath("//div[@class='AppHeader_header__logo__2D0X2']/a");
+    //Кнопка Профиль
+    private By profileButton = By.xpath("//a[@href='/account/profile']");
+    //Кнопка Выход
+    private By logoutButton = By.xpath("//li[@class='Account_listItem__35dAP']/button");
     public PersonalPageBurger(WebDriver driver) {
         super(driver);
     }
-
-    //Кнопка Конструктор
-    By constructorButton = By.xpath("//p[text()='Конструктор']");
-    //Логотип
-    By logoButton = By.xpath("//div[@class='AppHeader_header__logo__2D0X2']/a");
-    //Кнопка Профиль
-    By profileButton = By.xpath("//a[@href='/account/profile']");
-    //Кнопка Выход
-    By logoutButton = By.xpath("//li[@class='Account_listItem__35dAP']/button");
 
     @Step("Ожидание загрузки главной страницы")
     public void waitForLoad() {
@@ -43,5 +42,4 @@ public class PersonalPageBurger extends BasePageBurger {
     public void clickLogout() {
         driver.findElement(logoutButton).click();
     }
-
 }

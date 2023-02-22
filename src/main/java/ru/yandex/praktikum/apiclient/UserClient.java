@@ -1,9 +1,8 @@
-package ru.yandex.praktikum.API;
+package ru.yandex.praktikum.apiclient;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import ru.yandex.praktikum.BurgerConst;
-
 
 import static io.restassured.RestAssured.given;
 
@@ -15,7 +14,6 @@ public class UserClient extends BaseClient {
     public static String getAccessToken(Response response) {
 
         return response.body().as(AuthAnswerBean.class).getAccessToken().replace("Bearer ", "");
-
     }
 
     @Step("Удаление пользователя (DELETE /api/auth/user)")
@@ -33,6 +31,4 @@ public class UserClient extends BaseClient {
                 .body(userLogin).when()
                 .post(BurgerConst.BURGER_API_USER_AUTH);
     }
-
-
 }
